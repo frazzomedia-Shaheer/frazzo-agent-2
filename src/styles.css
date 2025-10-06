@@ -1,0 +1,28 @@
+:root{
+  --bg:#030417;
+  --muted:#9aa4c0;
+  --accent1:#7c3aed;
+  --accent2:#06b6d4;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,Arial;background:var(--bg);color:#e6eef8;}
+.app-root{display:flex;min-height:100vh;position:relative;overflow:hidden;}
+.bg-animated{position:fixed;inset:0;z-index:0;background:
+  radial-gradient(600px 300px at 10% 20%, rgba(124,58,237,0.12), transparent 10%),
+  radial-gradient(600px 300px at 90% 80%, rgba(6,182,212,0.10), transparent 10%);
+  filter:blur(20px); animation: float 12s ease-in-out infinite;}
+@keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
+.main-area{flex:1;padding:24px;z-index:2;}
+.topbar{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.03)}
+h1{margin:0;font-size:20px;color:var(--accent1)}
+.panel{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:16px;border-radius:12px;box-shadow:0 6px 40px rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.03)}
+.sidebar{width:280px;background:linear-gradient(180deg, rgba(124,58,237,0.06), rgba(6,182,212,0.02));padding:18px;position:relative;z-index:2;}
+.logo{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.logo .circle{width:52px;height:52px;border-radius:999px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--accent1),var(--accent2));}
+.login-wrap{display:flex;align-items:center;justify-content:center;min-height:100vh;width:100%;z-index:3}
+.login-card{width:720px;max-width:95%;display:flex;gap:20px;align-items:center;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:28px;border-radius:16px}
+.input{padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:white;width:100%}
+.table{width:100%;border-collapse:collapse}
+.table th{color:#9aa4c0;text-align:left;padding:8px}
+.table td{padding:8px;border-top:1px solid rgba(255,255,255,0.02)}
+@media(max-width:900px){.sidebar{display:none}.main-area{padding:12px}}
